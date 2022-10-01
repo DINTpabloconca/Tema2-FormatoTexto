@@ -23,28 +23,57 @@ namespace Tema2_FormatoTexto
         public MainWindow()
         {
             InitializeComponent();
+            azulRadioButton.IsChecked = true;
         }
 
         private void inputTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            inputTextBox.Text = resultadoTextBlock.Text;
+            resultadoTextBlock.Text = inputTextBox.Text;
+        }
+
+        private void negritaCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
             if (negritaCheckBox.IsChecked == true)
             {
-                resultadoTextBlock.FontWeight = FontWeights.Bold; 
-            }else if (cursivaCheckBox.IsChecked == true)
+                resultadoTextBlock.FontWeight = FontWeights.Bold;
+            }
+            if (negritaCheckBox.IsChecked == false)
+            {
+                resultadoTextBlock.FontWeight = FontWeights.Normal;
+            }
+        }
+
+        private void cursivaCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (cursivaCheckBox.IsChecked == true)
             {
                 resultadoTextBlock.FontStyle = FontStyles.Italic;
             }
+            if (cursivaCheckBox.IsChecked == false)
+            {
+                resultadoTextBlock.FontStyle = FontStyles.Normal;
+            }
+        }
 
+        private void azulRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
             if (azulRadioButton.IsChecked == true)
             {
                 resultadoTextBlock.Foreground = Brushes.Blue;
             }
-            else if (rojoRadioButton.IsChecked == true)
+        }
+
+        private void rojoRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (rojoRadioButton.IsChecked == true)
             {
                 resultadoTextBlock.Foreground = Brushes.Red;
             }
-            else if (verdeRadioButton.IsChecked == true)
+        }
+
+        private void verdeRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (verdeRadioButton.IsChecked == true)
             {
                 resultadoTextBlock.Foreground = Brushes.Green;
             }
